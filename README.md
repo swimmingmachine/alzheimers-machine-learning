@@ -17,5 +17,29 @@ The study by Kirste et al. attached an ankle-mounted accelerometer on each parti
 To make the samples comparable with each other, an interpolation of data is needed to synchronize data for all subjects. Ignoring this step may lead to undesirable
 results. To make the data points consistent with timestamps, we generated a reference array of timestamps between 22:00 on Day 1 to 22:00 on Day 2 based on a sampling rate used to generate the corresponding data set. The starting time for all 5 data sets was exact 22:00. Thus, an array containing reference timestamps can be obtained. For example, for the data set sampled in 50mHz, we obtained an array of 4320 timestamps (24 hour * 60 minutes * 60 seconds * 0.05). Then, we used MATLAB's interp1 function to generate the interpolated data. To prepare for interpolation, data of every subject were trimmed to 24-hour data. Only the data that has timestamps between 22:00 on Day 1 to 22:00 on Day 2 was kept. The rest of data were discarded in this paper.
 
+## Time and frequency features
+In order to investigate the performance of revised evaluation methodology, we extracted the following additional 10 time and frequency domain features from the different accelerometer datasets within a time window of 24 hours:
+* Mean, maximum, minimum, standard deviation, inter-quartile range,
+* Total average power of power spectral density,
+* Spectral entropy,
+* DC component of energy,
+* Normalized energy, and
+* FFT entropy
+These features have been used earlier for activity recognition tasks. We compared and combined the time / frequency domain features with the proposed features, which are described in the next section.
+
+## Dynamic/Static Interval based Features
+People with dementia / AD may exhibit different behaviours than healthy older adults, especially at different times of the day. This is referred to as `sundowning' effect, where a person with dementia / AD can become more agitated, aggressive or confused during late afternoon or early evening. Hsu et al. show that gait and balance based quantitative measurements can be good indicators for early diagnosis of AD. We extend this idea to measure dynamic and static intervals from the accelerometer readings. A dynamic or static interval is defined as the total time period during which a person has more motor activities or not. The level of activity was deduced from the acceleration magnitude values that
+was consecutively higher or lower than a pre-de ned value. This pre-defined threshold was empirically set to 4 in the unit of acceleration magnitude. The choice of the value 4 was based on the best accuracy obtained from multiple experiments using values range between 1 - 5. This threshold will determine dynamic and static intervals in the overall motion activities of a person during the whole day. The figures below show the dynamic intervals (in red color) and static intervals (in blue color) for a dyad that has a healthy person and another with AD at di erent times of the day. We can visually observe that the person with AD is more active during the later part of the day. We extracted 12 features
+based on these dynamic and static intervals. The features were extracted from the entire 24 hour data to obtain an overall motion pattern. Then, the day's data was divided into four 6-hour periods to capture motion information that may arise due to sundowning e ect or other behaviours in specific quarters of the day. The following is the table of the extracted features:
+* Number of points in each dynamic and static intervals in 24 hours
+* Number of dynamic and static intervals in 24 hours
+* Number of dynamic and static intervals from 12:01 am - 6:00 am
+* Number of dynamic and static intervals from 6:01 am - 12:00 pm
+* Number of dynamic and static intervals from 12:01 pm - 6:00 pm
+* Number of dynamic and static intervals from 6:01 pm - 12:00 am
+
+![image](https://user-images.githubusercontent.com/50496048/147377882-b626c523-03de-478d-941e-fdffaaf53cac.png)
+![image](https://user-images.githubusercontent.com/50496048/147377883-ab5c9cbf-6a2a-455d-a0b1-1534b1ef46c6.png)
+
 ## Key results
 Infusing domain knowledge regarding motion behaviour improved classification accuracy by 17%. 
