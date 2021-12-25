@@ -43,3 +43,5 @@ based on these dynamic and static intervals. The features were extracted from th
 
 ## Key results
 Infusing domain knowledge regarding motion behaviour improved classification accuracy by 17%. 
+![image](https://user-images.githubusercontent.com/50496048/147377896-b04c5d58-3a2c-4120-ba00-9bbd726dacd4.png)
+
