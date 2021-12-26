@@ -4,7 +4,7 @@
 [Paper published at Canadian AI Conference 2018](https://www.researchgate.net/profile/Shehroz-Khan-3/publication/323177717_Infusing_Domain_Knowledge_to_Improve_the_Detection_of_Alzheimer%27s_Disease_from_Everyday_Motion_Behaviour/links/5a96423945851535bcdcc83b/Infusing-Domain-Knowledge-to-Improve-the-Detection-of-Alzheimers-Disease-from-Everyday-Motion-Behaviour.pdf)
 
 ## Background
-Alzheimer’s Diseases destroy brain cells, impair the thinking ability, and deteriorates memory, which in turn impairs everyday activities of daily living (ADL) by signicantly changing the temporal structure of these activities. An early detection and prediction of such behaviours may allow the application of required interventions to deal with this cognitive degeneration problem.
+Alzheimer’s Diseases (AD) destroy brain cells, impair the thinking ability, and deteriorates memory, which in turn impairs everyday activities of daily living (ADL) by signicantly changing the temporal structure of these activities. An early detection and prediction of such behaviours may allow the application of required interventions to deal with this cognitive degeneration problem.
 
 With the advancements in sensor technologies, it is feasible to perform continuous and longitudinal monitoring of elderly people in smart homes. Dem@Care is an European research project for timely diagnosis, assessment, maintenance and promotion of self-independence of people with dementia. One of their studies is related to detecting the effects of AD from everyday motion behavior. They collected motion data from several dyads (couples) with one partner diagnosed with AD and one partner being a healthy control. They extracted frequency domain and principal component analysis (PCA) features from this data, tested several machine learning algorithms using leave-one-subject-out cross-validation (LOSOCV) and reported high classication accuracy. 
 
@@ -42,6 +42,6 @@ based on these dynamic and static intervals. The features were extracted from th
 ![image](https://user-images.githubusercontent.com/50496048/147377883-ab5c9cbf-6a2a-455d-a0b1-1534b1ef46c6.png)
 
 ## Key results
-Infusing domain knowledge regarding motion behaviour improved classification accuracy by 17%. 
+Infusing domain knowledge about motion behaviour of people living with AD improved AD classification accuracy by 17%, compared to baseline without domain knowledge infused. 
 ![image](https://user-images.githubusercontent.com/50496048/147377896-b04c5d58-3a2c-4120-ba00-9bbd726dacd4.png)
 
